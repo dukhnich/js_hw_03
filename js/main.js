@@ -66,9 +66,9 @@ else {
 }
 
 //5
-let user = {login: 'test',
+var user = {login: 'test',
     password: 'password',}; //объект для конкретного юзера
-let newPassword;
+var newPassword;
 if (prompt('Введите старый пароль:', '') !== user.password) {
     alert("Пароль неверен");
 }
@@ -79,8 +79,7 @@ else if ((newPassword = prompt('Введите новый пароль:', '')) =
     alert("Пароли совпадают");
 }
 else {
-    user.password = newPassword;
-    alert("Вы успешно сменили пароль");
+    confirm("Вы уверенны?") ? user.password = newPassword && alert("Вы успешно сменили пароль") : alert("Пароль не изменен")
 }
 
 //6
